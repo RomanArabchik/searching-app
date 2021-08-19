@@ -6,7 +6,11 @@ const Header = (props) => {
   return (
     <header className='header'>
       <h2>{props.text}</h2>
-      <SearchInput/>
+      <SearchInput 
+      search={props.search}
+      handleSearchInputChanges={props.handleSearchInputChanges}
+      />
+      <p className='header__user'>Roman Arabchik</p>
     </header>
   )
 

@@ -3,15 +3,17 @@ import './MovieCard.scss';
 import placeholderImg from '../../img/placeholder.jpg';
 
 const MovieCard = ({movie}) => {
-  const poster = movie.poster ? movie.poster : placeholderImg;
+  const poster = movie.Poster === "N/A" ?  placeholderImg : movie.Poster ;
   
   return (
     <div className='movieCard'>
-      <img className='movieCard__poster' src={poster} alt='eweweds'/>
-      <p className='movieCard__name'>{movie.name}</p>
-      <p className='movieCard__year'>{movie.year}</p>
-      <p className='movieCard__id'>{movie.id}</p>
-      <p className='movieCard__type'>{movie.type}</p>
+      <div className='movieCard__poster-wrapper'>
+        <img className='movieCard__poster' src={poster} alt={`${movie.Title} poster`} />
+      </div>
+      <p className='movieCard__item'>Name: {movie.Title}</p>
+      <p className='movieCard__item'>Year: {movie.Year}</p>
+      <p className='movieCard__item'>imdbID: {movie.imdbID}</p>
+      <p className='movieCard__item'>Type: {movie.Type}</p>
     </div>
   )
 }

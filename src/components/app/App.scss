@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+.App {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1170px;
+}
+
+.movies {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,31 @@
+.form{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 600px;
+  
+  &__input {
+    height: 24px;
+    width: 500px;
+    border-radius: 5px;
+    border: 1px solid;
+    
+    &:focus {
+      outline: none;
+    }
+  }
+  &__button {
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid;
+    color: white;
+    background-color: black;
+    transition-duration: .5s;
+    
+    &:hover {
+      cursor: pointer;
+      background-color: white;
+      color: black;
+    }
+  }
+}

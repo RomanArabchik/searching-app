@@ -1,0 +1,19 @@
+.movieCard {
+  width: 200px;
+  margin-top: 20px;
+  
+  &__poster-wrapper {
+    width: 200px;
+    height: 300px;
+  }
+  
+  &__poster {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__item {
+    font-size: 14px;
+  }
+}
