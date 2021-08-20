@@ -5,8 +5,6 @@ import MovieCard from '../movieCard/MovieCard';
 import Pagination from '../pagination/Pagination';
 import Loading from '../loading/Loading';
 
-// import debounce from '../Debounce/debounce';
-
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -54,7 +52,7 @@ const App = () => {
   const renderMovies = () => {
     if (movies.length < 1) {
       return (
-        <div className='enter'>Enter the movie name above</div>
+        <div className='enter'>Enter the movie name</div>
       )
     } else {
       return (

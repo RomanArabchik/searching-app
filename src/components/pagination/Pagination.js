@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './pagination.scss'
+import './pagination.scss';
 
 const Pagination = ({totalRes, paginate}) => {
   const [currentPage, setCurrentPage] = useState (1);
@@ -11,40 +11,33 @@ const Pagination = ({totalRes, paginate}) => {
     pageNumbers.push(i)
   }
 
+  const buttonOnClick = (number) => {
+    if (number === currentPage) return;
+
+    paginate(number);
+    setCurrentPage(number);
+  }
+
+  const paginateTemplate = (number) => {
+    return (
+      <li 
+        className={currentPage === number ? 'pagination__selected-item' : 'pagination__item'} 
+        key={number}
+        onClick={() => buttonOnClick(number)}
+      >
+        {number}
+      </li>
+    )
+  }
+
   const renderPaginate = () =>{
     if (currentPage > 5) {
       return (
-        pageNumbers
-        .slice(currentPage - 5, currentPage + 5)
-        .map(number => (
-          <li 
-            className={currentPage === number ? 'pagination__selected-item' : 'pagination__item'} 
-            key={number}
-            onClick={() => {
-              paginate(number);
-              setCurrentPage(number);
-            }}
-          >
-            {number}
-          </li>
-        ))
+        pageNumbers.slice(currentPage - 5, currentPage + 5).map(paginateTemplate)
       )
     } else {
       return (
-        pageNumbers
-        .slice(0, 10)
-        .map(number => (
-          <li 
-            className={currentPage === number ? 'pagination__selected-item' : 'pagination__item'} 
-            key={number}
-            onClick={() => {
-              paginate(number);
-              setCurrentPage(number);
-            }}
-          >
-            {number}
-          </li>
-        ))
+        pageNumbers.slice(0, 10).map(paginateTemplate)
       )
     }
   }
@@ -55,10 +48,7 @@ const Pagination = ({totalRes, paginate}) => {
       <button
         disabled={currentPage === 1 ? true : false}
         className='pagination__button-prev'
-        onClick={() => {
-          paginate(currentPage - 1);
-          setCurrentPage(currentPage - 1);
-        }}
+        onClick={() => buttonOnClick(currentPage - 1)}
       />
       <ul className='pagination__items'>
         {renderPaginate()}
@@ -66,10 +56,7 @@ const Pagination = ({totalRes, paginate}) => {
       <button
         disabled={currentPage === pageNumbers.length ? true : false}
         className='pagination__button-next'
-        onClick={() => {
-          paginate(currentPage + 1);
-          setCurrentPage(currentPage + 1);
-        }}
+        onClick={() => buttonOnClick(currentPage + 1)}
       />
     </div>
   )

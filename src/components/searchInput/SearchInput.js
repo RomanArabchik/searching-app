@@ -1,4 +1,5 @@
 import React from 'react';
+import debounce from '../Debounce/debounce';
 import './SearchInput.scss';
 
 const SearchInput = ({handleSearchInputChanges}) => {
@@ -7,7 +8,7 @@ const SearchInput = ({handleSearchInputChanges}) => {
       <input 
         className='search__input'
         placeholder='Type the movie name here'
-        onChange={handleSearchInputChanges}
+        onChange={debounce(handleSearchInputChanges, 1000)}
         type='text'
       />
     </div>

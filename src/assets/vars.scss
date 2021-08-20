@@ -24,5 +24,6 @@ $header-color:aqua;
   &:disabled::after {
     border-left: 1px solid $arrows-color;
     border-bottom: 1px solid $arrows-color;
+    cursor: default;
   }
 }

@@ -3,7 +3,7 @@ const debounce = (fn, ms) => {
   return function() {
     const fnCall = () =>{fn.apply(this, arguments)};
     clearTimeout(timeout);
-    setTimeout(fnCall, ms);
+    timeout = setTimeout(fnCall, ms);
   }
 }
 
