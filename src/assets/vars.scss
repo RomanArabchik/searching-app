@@ -1,0 +1,28 @@
+// === Colors ===
+$arrows-color: black;
+$header-color:aqua;
+// ===Colors
+
+@mixin arrow {
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  &::after {
+    top: 8px;;
+    left: 9px;
+    content: '';
+    display: block;
+    width: 7px;
+    height: 7px;
+    border-left: 3px solid $arrows-color;
+    border-bottom: 3px solid $arrows-color;
+  }
+
+  &:disabled::after {
+    border-left: 1px solid $arrows-color;
+    border-bottom: 1px solid $arrows-color;
+  }
+}

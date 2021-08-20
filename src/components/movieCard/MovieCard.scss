@@ -1,10 +1,10 @@
 .movieCard {
-  width: 200px;
-  margin-top: 20px;
+  width: 180px;
+  margin: 10px 10px 0 10px;
   
   &__poster-wrapper {
-    width: 200px;
-    height: 300px;
+    width: 180px;
+    height: 270px;
   }
   
   &__poster {
@@ -14,6 +14,7 @@
   }
 
   &__item {
-    font-size: 14px;
+    font-size: 12px;
+    margin: 0;
   }
 }

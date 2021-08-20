@@ -1,15 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+@import '../../assets/vars.scss';
+
 .App {
   font-family: 'Poppins';
   font-style: normal;
-  font-weight: 400;
   margin: 0 auto;
   padding: 0 15px;
   max-width: 1170px;
+
+  @media(max-width: 1024px) {
+    max-width: 1000px;
+  }
+}
+
+.movies-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.result {
+  font-size: 16px;
+  margin-left: 10px;
+  font-weight: 700;
+  @media (max-width: 550px) {
+    font-size: 14px;
+  }
+  @media (max-width: 400px) {
+    font-size: 10px;
+  }
+
 }
 
 .movies {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  height: 800px;
+
+  @media (max-width: 1024px) {
+    height: auto;
+  }
 }
